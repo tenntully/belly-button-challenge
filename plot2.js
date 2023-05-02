@@ -11,16 +11,15 @@ function plot()
         const filteredData = data.samples.filter(function(d) {
             return d.id === selectedValue;
         });
-
-        // define the arrays (even if they are empty)
         
-        // define the arrays for the bubble plot
+        // define the plot data
         let x = filteredData[0].otu_ids;
         let y = filteredData[0].sample_values;
         let size = filteredData[0].sample_values;
         let color = filteredData[0].otu_ids;
         let label = filteredData[0].otu_labels;
         
+        // generate the trace
         trace = {
             x: x,
             y: y,
@@ -34,13 +33,15 @@ function plot()
         };
     
         traceData = [trace];
-    
+        
+        // define the plot layout
         layout = {
             title: "All OTU IDs and Sample Values",
             xaxis: { title: "OTU IDs" },
             yaxis: { title: "Sample Values" }
         }
     
+        // generate the plot using plotly
         Plotly.newPlot("bubblePlot", traceData, layout);   
     });
 }
@@ -48,5 +49,5 @@ function plot()
 // call on d3 selector associate the dropdown with an object
 // d3.selectAll("#selDataset").on("change", plot);
 
-// call plot()
+// call plot() to initialize
 plot();

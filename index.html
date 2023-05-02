@@ -27,8 +27,10 @@
           <h5>Test Subject ID No.:</h5>
           <select id="selDataset" onchange="optionChanged(this.value)"></select>
 
+          <!-- script to populate the dropdown options-->
           <script src="dropdownOptions.js"></script>
 
+          <!-- script to log the updates to the file-->
           <script src="changeOption.js"></script>
 
           <!-- JavaScript file for reading .json file and parsing data-->
@@ -41,21 +43,25 @@
             <h3 class="panel-title">Demographic Info</h3>
           </div>
           <div id="sample-metadata" class="panel-body"></div>
+            <!-- script to populate the demographic data-->
             <script src="demographic.js"></script>
         </div>
       </div>
       <div class="col-md-5">
         <div id="barPlot"></div>
+            <!-- script to generate the bar plot-->
             <script src="plot.js"></script>
       </div>
       <div class="col-md-5">
         <div id="gaugePlot"></div>
+            <!-- script to generate the gauge plot-->
             <script src="plot3.js"></script>
       </div>
     </div>
     <div class="row">
       <div class="col-md-12">
         <div id="bubblePlot"></div>
+          <!-- script to generate the bubble plot-->
           <script src="plot2.js"></script>
       </div>
     </div>

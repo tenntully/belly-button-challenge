@@ -12,9 +12,7 @@ function plotGauge()
             return d.id === parseInt(selectedValue);
         });
 
-        // define the arrays (even if they are empty)
-        
-        // define the arrays for the bubble plot
+        // get the wash frequency based on the selected dropdown value
         wfreq = filteredData[0].wfreq
         
         // Set up the data and layout for the gauge chart
@@ -40,13 +38,15 @@ function plotGauge()
                 }
             }
         ];
-    
+        
+        // define the plot layout
         layout = {
             title: {
             text: "Washing Frequency"
             }
         };
         
+        // generate the plot using plotly
         Plotly.newPlot("gaugePlot", data, layout);   
     });
 }
@@ -54,5 +54,5 @@ function plotGauge()
 // call on d3 selector associate the dropdown with an object
 // d3.selectAll("#selDataset").on("change", plotGauge);
 
-// call plot()
+// call plot() to initialize
 plotGauge();

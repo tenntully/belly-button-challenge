@@ -9,4 +9,4 @@ d3.json("samples.json").then(function(data) {
       .text(function(d) { return d.id; });
 
     select.property("value", data.metadata[0].id);
-  });
+});

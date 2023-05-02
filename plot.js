@@ -12,12 +12,12 @@ function init()
             return d.id === selectedValue;
         });
 
-        // define the arrays (even if they are empty)
-        
+        // define the plot data
         let x = filteredData[0].sample_values.slice(0, 10).reverse();
         let y = filteredData[0].otu_ids.slice(0, 10).map(id => `OTU ${id}`).reverse();
         let label = filteredData[0].otu_labels.slice(0, 10).reverse();
         
+        // generate the trace
         trace = {
             x: x,
             y: y,
@@ -27,13 +27,15 @@ function init()
         }
     
         traceData = [trace];
-    
+        
+        // definte the layout
         layout = {
             title: "Top 10 OTUs",
             xaxis: { title: "Sample Values" },
             yaxis: { title: ""}
         }
-    
+        
+        // plot using plotly
         Plotly.newPlot("barPlot", traceData, layout);   
     });
 }
@@ -41,5 +43,5 @@ function init()
 // call on d3 selector associate the dropdown with an object
 // d3.selectAll("#selDataset").on("change", init);
 
-// call init()
+// call init() to generate the initialization plot
 init();
